@@ -22,11 +22,13 @@ var pingPong = function(number) {
 
 $(document).ready(function(){
   $("form").submit(function(event){
-  var number = parseInt($("input#number").val());
-  var resultsArray =  pingPong(number);
-  resultsArray.forEach(function(i) {
-    $("#results").append("<li>" + i + "</li>");
-});
-  event.preventDefault();
+    $("ul").empty();
+    var number = parseInt($("input#number").val());
+    var resultsArray =  pingPong(number);
+    resultsArray.forEach(function(i) {
+      $("#results").append("<li>" + i + "</li>");
+    });
+    $(".results").show();
+    event.preventDefault();
   });
 });
